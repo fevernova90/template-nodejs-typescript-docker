@@ -1,0 +1,41 @@
+{
+  "name": "hl-webchat-backend",
+  "version": "0.0.1",
+  "description": "Handle http request and webhooks for HL-webchat integration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fevernova90/hl-webchat-backend.git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "PORT=8080 nodemon -r dotenv/config src/server.ts",
+    "dev-docker": "npm run build && docker build -t tom/hl-webchat-backend:dev . && docker run --rm -p 8080:80 tom/hl-webchat-backend:dev",
+    "deploy-staging": "chmod 755 deploy-staging.sh && ./deploy-staging.sh",
+    "deploy-production": "chmod 755 deploy-production.sh && ./deploy-production.sh"
+  },
+  "author": "Muhaimin Taib (fevernova90@gmail.com)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.6.4",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}

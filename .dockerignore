@@ -1,0 +1,12 @@
+node_modules
+Dockerfile
+input/*
+output/*
+.eslintrc.js
+.gitignore
+.vscode
+.env
+prettier.config.js
+README.md
+tsconfig.json
+src/*
